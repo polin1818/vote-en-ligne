@@ -1,0 +1,897 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  /* Header */
+  header {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Logo */
+  .logo img {
+    max-height: 50px;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    list-style-type: none;
+    flex-grow: 1;
+    justify-content: center; /* Centre le menu */
+    margin: 0; /* Suppression de la marge par défaut */
+  }
+  
+  .nav-links li {
+    margin: 0 15px; /* Espacement entre les éléments du menu */
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #00796b;
+  }
+  
+  /* Auth Buttons */
+  .auth-btn {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn-connect, .btn-signup {
+    padding: 8px 16px;
+    border: 2px solid #00796b;
+    border-radius: 5px;
+    color: #00796b;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 10px; /* Espacement entre les boutons */
+  }
+  
+  .btn-connect:hover, .btn-signup:hover {
+    background-color: #00796b;
+    color: #fff;
+  }
+  
+  /* Icône Hamburger pour le menu (responsive) */
+  .menu-toggle {
+    display: none; /* Masquer par défaut */
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #00796b;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column; /* Afficher les éléments du menu en colonne sur petits écrans */
+      align-items: center;
+      width: 100%;
+      display: none; /* Menu caché par défaut */
+    }
+  
+    .nav-links.active {
+      display: flex; /* Afficher le menu lorsqu'il est actif */
+    }
+  
+    .menu-toggle {
+      display: flex; /* Afficher le menu hamburger sur petits écrans */
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start; /* Aligner les éléments à gauche */
+    }
+  
+    .nav-links li {
+      margin: 10px 0; /* Espacement vertical */
+    }
+  
+    .auth-btn {
+      margin-top: 10px;
+    }
+  }
+  
+  /* Pour les très petits appareils */
+  @media (max-width: 480px) {
+    .nav-links a {
+      font-size: 14px; /* Réduction de la taille du texte sur les très petits écrans */
+    }
+  
+    .btn-connect, .btn-signup {
+      padding: 6px 12px; /* Taille réduite du bouton de connexion */
+    }
+  }
+  /* Banner */
+  .banner {
+    background-image: url('vote.jpg'); /* Chemin relatif */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+  }
+  
+  
+  .banner-text {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center; /* Centre le texte */
+    animation: fadeIn 1.5s ease-in; /* Animation d'apparition */
+  }
+  
+  .banner-text h1 {
+    font-size: 28px;
+    margin: 10px;
+  }
+  
+  .banner-text p {
+    font-size: 20px;
+  }
+  
+
+
+/* Animation globale pour les éléments */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  /* About Section */
+  .about {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrer le contenu */
+    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+    animation: slideIn 1s ease-in; /* Animation d'apparition */
+  }
+  
+  .about-text {
+    flex: 1; /* Prend 1/3 de l'espace disponible */
+    padding-right: 20px; /* Espacement à droite */
+    animation: fadeInLeft 1s; /* Animation pour le texte */
+  }
+  
+  .about-text h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .about-image {
+    flex: 1; /* Prend 1/3 de l'espace disponible */
+    overflow: hidden;
+    animation: fadeInRight 1s; /* Animation pour l'image */
+  }
+  
+  .about-image img {
+    width: 100%;
+    border-radius: 10px; /* Arrondi les coins de l'image */
+    transition: transform 0.5s; /* Transition pour l'effet de survol */
+  }
+  
+  .about-image img:hover {
+    transform: scale(1.05); /* Zoom lors du survol */
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      transform: translateX(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  /* Styles généraux pour les sections */
+section {
+    padding: 50px 20px;
+    text-align: center;
+    animation: fadeInUp 1s ease-in;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Services Section */
+.services {
+    background-color: #f4f4f4;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 200px; /* Largeur de la carte */
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service-card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+/* Plans populaires Section */
+.house-plans {
+    background-color: #f9f9f9;
+}
+
+.plans-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.plan-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 200px; /* Largeur de la carte */
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.plan-card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.plan-card:hover {
+    transform: scale(1.05);
+}
+
+/* Valeurs Section */
+.values {
+    background-color: #f4f4f4;
+}
+
+.values-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.value-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 200px; /* Largeur de la carte */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Cours Section */
+.courses {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    animation: fadeInUp 1s ease-in; /* Animation */
+}
+
+.courses h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.courses-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Cartes de cours */
+.course-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 200px; /* Largeur de la carte */
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre le contenu */
+}
+
+.course-card img {
+    width: 80%; /* Réduit la largeur de l'image */
+    border-radius: 10px 10px 0 0; /* Arrondit le haut de l'image */
+}
+
+.course-card h3 {
+    font-size: 1.2rem; /* Taille du titre */
+    margin-top: 10px;
+    color: #2c3e50;
+}
+
+.course-card p {
+    font-size: 0.9rem; /* Taille du texte */
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.course-card .btn {
+    display: inline-block;
+    padding: 6px 12px; /* Padding du bouton */
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Taille du texte du bouton */
+}
+
+.course-card:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative; /* Permet de bien afficher le footer */
+    bottom: 0; /* Colle le footer en bas */
+    width: 100%; /* S'assure que le footer occupe toute la largeur */
+}
+
+/* Animation pour toutes les sections */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Services Section */
+.services {
+    background-color: #f4f4f4;
+    padding: 50px;
+    text-align: center;
+}
+
+.service-card {
+    border: 1px solid #ddd;
+    padding: 30px; /* Augmente le padding pour une meilleure taille */
+    width: 300px; /* Augmente la largeur de la carte */
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-card img {
+    width: 100%; /* L'image occupe toute la largeur */
+    height: auto; /* Garde la proportion de l'image */
+    border-radius: 10px; /* Arrondit les coins de l'image */
+}
+
+/* House Plans Section */
+.house-plans {
+    padding: 50px;
+    text-align: center;
+}
+
+.plan-card {
+    border: 1px solid #ddd;
+    padding: 30px; /* Augmente le padding pour une meilleure taille */
+    width: 300px; /* Augmente la largeur de la carte */
+    text-align: center;
+}
+
+/* Cours Section */
+/* Cours Section */
+.courses {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.courses-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.course-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 300px; /* Largeur uniforme des cartes */
+  height: 400px; /* Hauteur uniforme pour toutes les cartes */
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Aligne le contenu de manière uniforme */
+  align-items: center;
+  overflow: hidden;
+}
+
+.course-card img {
+  width: 100%;
+  height: 150px; /* Hauteur fixe pour les images */
+  object-fit: cover; /* Recadre l'image si nécessaire pour correspondre à la taille */
+  border-radius: 10px 10px 0 0;
+}
+
+.course-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.course-card p {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.course-card .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.course-card:hover {
+  transform: scale(1.05); /* Effet au survol */
+}
+
+/* Responsive design pour petits écrans */
+@media (max-width: 768px) {
+  .courses-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .course-card {
+      width: 90%; /* Prend presque toute la largeur sur petits écrans */
+      height: auto; /* Ajuste la hauteur automatiquement */
+  }
+}
+
+/* Contact Section */
+.contact {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.contact  {
+  font-size: 36px;
+  color: #00796b;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Contact Info */
+.contact-info {
+  display: flex;
+  justify-content: center; /* Aligne les icônes au centre */
+  gap: 50px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 40px; /* Espace entre les icônes et le formulaire */
+}
+
+.contact-detail {
+  text-align: center;
+  max-width: 200px;
+}
+
+.contact-detail i {
+  font-size: 48px;
+  color: #00796b;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.contact-detail:hover i {
+  color: #ff5722; /* Change la couleur au survol */
+  transform: scale(1.2);
+}
+
+.contact-detail h3 {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.contact-detail p {
+  font-size: 16px;
+  color: #777;
+}
+
+/* Contact Form */
+.contact-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00796b;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+.contact-form .btn {
+  background-color: #00796b;
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: block;
+  margin: 0 auto; /* Centre le bouton */
+}
+
+.contact-form .btn:hover {
+  background-color: #004d40;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-info {
+      flex-direction: column; /* Aligne les icônes en colonne sur petits écrans */
+      align-items: center;
+  }
+
+  .contact-detail {
+      margin-bottom: 20px;
+  }
+}
+
+.btn-see-more {
+    display: inline-block; /* Pour rendre le lien en bloc */
+    padding: 10px 20px; /* Espacement interne */
+    background-color: #00796b; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border-radius: 5px; /* Coins arrondis */
+    text-decoration: none; /* Enlever le soulignement */
+    font-size: 16px; /* Taille du texte */
+    margin-top: 20px; /* Espacement supérieur */
+    transition: background-color 0.3s; /* Animation lors du survol */
+  }
+  
+  .btn-see-more:hover {
+    background-color: #005f51; /* Couleur de fond au survol */
+  }
+  /* Styles pour la section des plans */
+.house-plans {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.plans-container {
+  display: flex;
+  justify-content: center;
+}
+
+.plan-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 300px;
+  margin: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.plan-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.plan-card h3 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.plan-card p {
+  font-size: 1rem;
+  color: #777;
+}
+
+.plan-card .btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.plan-card .btn:hover {
+  background-color: #004d40;
+}
+
+.view-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prev, .next {
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+  background-color: #004d40;
+}
+/* Footer Styling */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-description h3 {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.footer-description p {
+  font-size: 16px;
+  color: #cccccc;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.footer-social h4 {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons li {
+  display: inline-block;
+}
+
+.social-icons li a {
+  font-size: 24px;
+  color: white;
+  background-color: #0726b0;
+  padding: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons li a:hover {
+  background-color: #004d40;
+  transform: translateY(-5px);
+}
+
+.facebook:hover {
+  background-color: #3b5998;
+}
+
+.whatsapp:hover {
+  background-color: #25D366;
+}
+
+.instagram:hover {
+  background-color: #E4405F;
+}
+
+.twitter:hover {
+  background-color: #1DA1F2;
+}
+
+.footer-bottom {
+  border-top: 1px solid #555;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #cccccc;
+  margin: 0;
+}

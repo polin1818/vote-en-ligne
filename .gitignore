@@ -1,0 +1,15 @@
+# Cache et logs
+*.log
+*.tmp
+*.bak
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Dossier d'upload (optionnel)
+uploads/
+
+# Composer
+/vendor/
+composer.lock
