@@ -58,4 +58,4 @@ vote-en-ligne/
 1. Cloner le dépôt :
 
 ```bash
-git clone https://github.com/TON_UTILISATEUR/vote-en-ligne.git
+git clone https://github.com/polin1818/vote-en-ligne.git
